@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "epax-client_1-21-v10",
+	"version": "${version}",
+	"name": "EPAX-Client_1-21-v1.0",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/epax-client_1-21-v10/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"de.epax.EPAXClient_121v10"
+		],
+		"client": [
+			"de.epax.EPAXClient_121v10Client"
+		]
+	},
+	"mixins": [
+		"epax-client_1-21-v10.mixins.json",
+		{
+			"config": "epax-client_1-21-v10.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
