@@ -27,21 +27,20 @@ public class CrosshairMixin {
         int crosshairX = screenWidth / 2;
         int crosshairY = screenHeight / 2;
 
-        // Kleinere Größe, aber schlanker (klassisches Aussehen)
         float letterHue = hue % 1.0f;
         int rgbColor = java.awt.Color.HSBtoRGB(letterHue, 1.0f, 1.0f);
 
-        // Oben und Unten (schlanker)
+
         context.fill(crosshairX - 1, crosshairY - 2, crosshairX + 1, crosshairY - 1, rgbColor);  // Oben
         context.fill(crosshairX - 1, crosshairY + 1, crosshairX + 1, crosshairY + 2, rgbColor);  // Unten
 
-        // Links und Rechts (schlanker)
+
         context.fill(crosshairX - 2, crosshairY - 1, crosshairX - 1, crosshairY + 1, rgbColor);  // Links
         context.fill(crosshairX + 1, crosshairY - 1, crosshairX + 2, crosshairY + 1, rgbColor);  // Rechts
 
         hue += speed;
         if (hue > 1.0f) hue -= 1.0f;
 
-        ci.cancel(); // Überschreibt das Standard-Crosshair
+        ci.cancel();
     }
 }
